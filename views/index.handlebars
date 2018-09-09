@@ -1,0 +1,23 @@
+<body>
+<div class="container">
+<div class="header">
+    <h1>NY Times News Scraper</h1>
+</div>
+<div class="buttons">
+    <a id="scrape" href="/articles">New Scrape</a>
+    <a id="saved" href="/saved">Saved Articles</a>
+    <a id="comments" href="#">Comments</a>
+</div>
+<div class="main">
+    <h2>Freshly Scraped Articles</h2>
+    <ul>
+        {{#each article}} 
+        {{>articles/article-block}}
+        {{else}}
+        <p class="no-articles">Click the New Scrape button to get started!</p>
+        {{/each}}
+    </ul>
+</div>
+
+</div>
+</body>

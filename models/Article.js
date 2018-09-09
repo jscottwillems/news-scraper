@@ -5,9 +5,10 @@ const Schema = mongoose.Schema;
 const ArticleSchema = new Schema({
     title: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
-    body: {
+    summary: {
         type: String,
         required: true
     },
@@ -15,13 +16,18 @@ const ArticleSchema = new Schema({
         type: String,
         required: true
     },
+    img: {
+        type: String,
+    },
     date: {
-        type: Date,
+        type: String,
         required: true
     },
-    image: {
-        type: String
+    saved: {
+        type: Boolean,
+        default: false
     }
+    
 });
 
 var Article = mongoose.model("Article", ArticleSchema)

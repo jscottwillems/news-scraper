@@ -1,0 +1,11 @@
+<li class="article">
+   <h3>{{this.title}}</h3>
+   <div class="summary">{{this.summary}}</div>
+   <div class="date">{{this.date}}</div>
+   <div class="link"><a href={{this.link}} target="blank">Full Story</a></div>
+   <img class="thumbnail" src={{this.img}}>
+   <form action="/articles/:id" method="POST">
+   <button type="submit">Save</button>
+   </form>
+   <button type="submit">Comment</button>
+</li>
