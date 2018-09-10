@@ -31,7 +31,8 @@ app.get('/', function(req, res) {
                     summary: newSummary,
                     link:  newLink,
                     img: newImg,
-                    date: newDate
+                    date: newDate,
+                    timestamp: newDate
                 },
                 function(err, data) {
                     if (err) {
@@ -47,7 +48,7 @@ app.get('/', function(req, res) {
 });
 
 app.get("/articles", function(req, res) {
-    db.Article.find({}).then(function(dbArticle) {
+    db.Article.find({}).sort({timestamp: -1}).then(function(dbArticle) {
         console.log(dbArticle)
         res.render("index", {
            article: dbArticle
@@ -58,7 +59,7 @@ app.get("/articles", function(req, res) {
 });
 
 app.get("/saved", function(req, res) {
-    db.Article.find({ saved: true}).then(function(dbArticle) {
+    db.Article.find({ saved: true }).then(function(dbArticle) {
         res.render("index", {
             article: dbArticle
         });

@@ -1,11 +1,14 @@
 <li class="article">
-   <h3>{{this.title}}</h3>
-   <div class="summary">{{this.summary}}</div>
-   <div class="date">{{this.date}}</div>
-   <div class="link"><a href={{this.link}} target="blank">Full Story</a></div>
-   <img class="thumbnail" src={{this.img}}>
-   <form action="/articles/:id" method="POST">
-   <button type="submit">Save</button>
-   </form>
-   <button type="submit">Comment</button>
+    <div class="title">
+        <b>{{this.title}}</b>
+        <p>{{this.date}}</p>
+    </div>
+    <img class="thumbnail" src={{this.img}}>
+    <div class="summary">{{this.summary}}<br><br><a href={{this.link}} target="blank">Full Story</b></a></div>
+    <div class="interact">
+        <form action="/articles/:id" method="POST">
+            <button class="save" type="submit">Save</button>
+        </form>
+        <button type="submit">Comment</button>
+    </div>
 </li>

@@ -8,13 +8,14 @@
     <a id="saved" href="/saved">Saved Articles</a>
     <a id="comments" href="#">Comments</a>
 </div>
+<br>
 <div class="main">
     <h2>Freshly Scraped Articles</h2>
     <ul>
         {{#each article}} 
         {{>articles/article-block}}
         {{else}}
-        <p class="no-articles">Click the New Scrape button to get started!</p>
+        <h4 class="no-articles">Click the New Scrape button to get started!</h4>
         {{/each}}
     </ul>
 </div>

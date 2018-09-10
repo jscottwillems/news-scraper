@@ -26,8 +26,11 @@ const ArticleSchema = new Schema({
     saved: {
         type: Boolean,
         default: false
+    },
+    timestamp: {
+        type: Date,
+        required: true
     }
-    
 });
 
 var Article = mongoose.model("Article", ArticleSchema)
